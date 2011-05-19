@@ -132,11 +132,10 @@ DISTRO_EXTRA_RDEPENDS ?= ""
 RDEPENDS_${PN} += "\
 	base-files base-passwd netbase \
         busybox initscripts slugos-init \
-        update-modules \
+        sysvinit update-modules \
 	module-init-tools modutils-initscripts \
 	libgcc \
 	beep \
-	${IMAGE_INIT_MANAGER} \
 	${IMAGE_DEV_MANAGER} \
 	${SLUGOS_STANDARD_RDEPENDS} \
 	${SLUGOS_MACHINE_RDEPENDS} \
