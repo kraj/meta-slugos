@@ -65,7 +65,7 @@ do_install_append() {
 #	rm	${D}${sysconfdir}/rcS.d/S55urandom
 	# udev will run at S04 if installed
 	rm	${D}${sysconfdir}/rcS.d/S38devpts.sh
-	rm -f	${D}${sysconfdir}/rcS.d/S06alignment
+	rm -f	${D}${sysconfdir}/rcS.d/S06alignment.sh
 	rm 	${D}${sysconfdir}/rcS.d/S37populate-volatile.sh
 	rm 	${D}${sysconfdir}/rcS.d/S03sysfs.sh
 	rm 	${D}${sysconfdir}/rcS.d/S02banner.sh
