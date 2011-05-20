@@ -34,12 +34,8 @@ DISTRO_FEATURES = "largefile ipv4 ipv6 nfs smbfs wifi ppp alsa bluetooth ext2 vf
 # We may also wish to enable raid support at some point (space permitting)
 #DISTRO_FEATURES += " raid"
 
-IMAGE_BASENAME = "${@['slugos${SITEINFO_ENDIANNESS}', 'ucslugc'][bb.data.getVar('TARGET_OS', d, 1) == 'linux-uclibceabi']}"
-
-# Define CACHE and DEPLOY_DIR so we could do multi-distro/multi-machine builds
-
-CACHE = "${TMPDIR}/cache/${TCMODE}-${TCLIBC}${@['', '/' + str(bb.data.getVar('MACHINE', d, 1))][bool(bb.data.getVar('MACHINE', d, 1))]}${@['', '/' + str(bb.data.getVar('SDKMACHINE', d, 1))][bool(bb.data.getVar('SDKMACHINE', d, 1))]}"
-IMAGE_ROOTFS = "${TMPDIR}/rootfs/${MACHINE}-${TCLIBC}-${PN}"
+IMAGE_BASENAME_libc-uclibc = ucslugc${SITEINFO_ENDIANNESS}
+IMAGE_BASENAME = slugos${SITEINFO_ENDIANNESS}
 
 RDEPENDS_append = " ${@base_conditional("ONLINE_PACKAGE_MANAGEMENT", "none", "", "opkg", d)}"
 PACKAGE_INSTALL_append = " ${@base_conditional("ONLINE_PACKAGE_MANAGEMENT", "none", "", "opkg", d)}"
