@@ -37,7 +37,6 @@ DISTRO_FEATURES = "largefile ipv4 ipv6 nfs smbfs wifi ppp alsa bluetooth ext2 vf
 IMAGE_BASENAME_libc-uclibc = ucslugc${SITEINFO_ENDIANNESS}
 IMAGE_BASENAME = slugos${SITEINFO_ENDIANNESS}
 
-RDEPENDS_append = " ${@base_conditional("ONLINE_PACKAGE_MANAGEMENT", "none", "", "opkg", d)}"
 PACKAGE_INSTALL_append = " ${@base_conditional("ONLINE_PACKAGE_MANAGEMENT", "none", "", "opkg", d)}"
 # The following need not be set, the defaults should be adequate
 #USE_NLS = "no" or "yes"
