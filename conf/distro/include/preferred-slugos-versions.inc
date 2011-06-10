@@ -11,7 +11,7 @@
 # This *must* be removed after initial testing is completed.  MJW 08-Dec-2008
 #
 SRCREV_pn-linux-ixp4xx ?= "1091"
-PREFERRED_VERSION_linux-ixp4xx = "2.6.37+svnr${SRCREV_pn-linux-ixp4xx}"
+PREFERRED_VERSION_linux-ixp4xx = "2.6.37+svnr${SRCREV}"
 #
 #===========================================================================#
 #===========================================================================#
