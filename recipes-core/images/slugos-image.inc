@@ -7,8 +7,9 @@ HOMEPAGE = "http://www.nslu2-linux.org"
 
 DEPENDS = "task-slugos"
 
+IMAGE_FEATURES += "package-management"
 IMAGE_INSTALL = "task-slugos \
-                 ${@base_conditional('ONLINE_PACKAGE_MANAGEMENT', 'none', '', 'opkg', d)} \
+                 ${@oe.utils.contains('IMAGE_FEATURES', 'package-management', 'opkg', '', d)} \
 		 "
 
 COMPATIBLE_MACHINE = "(nslu2|ixp4xx|sheevaplug|qemuarm)"
