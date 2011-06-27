@@ -30,7 +30,7 @@ THUMB_INTERWORK = "yes"
 #    arm system and vice versa.  It is strongly recommended that DISTROs not
 #    turn this off - the actual cost is very small.
 # We want images supporting the following features (for task-base)
-DISTRO_FEATURES = "largefile ipv4 ipv6 nfs smbfs wifi ppp alsa bluetooth ext2 vfat irda pcmcia usbhost pci eabi xattr"
+DISTRO_FEATURES = "largefile ipv4 ipv6 nfs smbfs wifi ppp alsa bluetooth ext2 vfat irda pcmcia usbhost pci eabi xattr ${DISTRO_FEATURES_LIBC}"
 # We may also wish to enable raid support at some point (space permitting)
 #DISTRO_FEATURES += " raid"
 
@@ -47,6 +47,11 @@ DISTRO_TYPE ?= "INVALID"
 
 # The following must not be changed.
 TARGET_FPU = "soft"
+
+# so we get armv5teb etc into overrides, uclibc configs depend on it
+# to choose proper config
+
+MACHINEOVERRIDES .= ":${@bb.data.getVar('FEED_ARCH', d,1).replace('all','noarch')}"
 
 # glib-2.0 builds require USE_NLS to be overridden
 USE_NLS_glib-2.0 = "yes"
