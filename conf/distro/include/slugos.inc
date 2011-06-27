@@ -34,6 +34,11 @@ DISTRO_FEATURES = "largefile ipv4 ipv6 nfs smbfs wifi ppp alsa bluetooth ext2 vf
 # We may also wish to enable raid support at some point (space permitting)
 #DISTRO_FEATURES += " raid"
 
+# Add thumb-interwork to feature list if selected machine supports it.
+DISTRO_FEATURES += ' ${@["", "thumb-interwork"][bb.data.getVar('THUMB_INTERWORK', d, 1) == "yes"]}'
+
+DISTRO_FEATURES += "${DISTRO_FEATURES_LIBC}"
+
 IMAGE_BASENAME_libc-uclibc = ucslugc${SITEINFO_ENDIANNESS}
 IMAGE_BASENAME = slugos${SITEINFO_ENDIANNESS}
 
