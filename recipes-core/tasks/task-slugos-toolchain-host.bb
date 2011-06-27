@@ -1,4 +1,4 @@
-require recipes-core/tasks/task-sdk-host.bb
+require recipes-core/tasks/task-sdk-host-nativesdk.bb
 PR = "r1"
 DESCRIPTION = "Packages for a standalone SlugOS external toolchain"
 ALLOW_EMPTY = "1"
