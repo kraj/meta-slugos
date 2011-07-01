@@ -67,7 +67,7 @@ do_install_append() {
 	rm	${D}${sysconfdir}/rcS.d/S38devpts.sh
 	rm -f	${D}${sysconfdir}/rcS.d/S06alignment.sh
 	rm 	${D}${sysconfdir}/rcS.d/S37populate-volatile.sh
-	rm 	${D}${sysconfdir}/rcS.d/S03sysfs.sh
+	rm 	${D}${sysconfdir}/rcS.d/S02sysfs.sh
 	rm 	${D}${sysconfdir}/rcS.d/S02banner.sh
 	rm 	${D}${sysconfdir}/rcS.d/S10checkroot.sh
 	rm 	${D}${sysconfdir}/rc0.d/S25save-rtc.sh
@@ -98,7 +98,7 @@ do_install_append() {
 	# Keep these in order of startup - S, then 1, 2-5, 0,6
 	# according to the level in which the script starts (or stops) first.
 	update-rc.d -r ${D} banner		start  2 S .
-	update-rc.d -r ${D} sysfs.sh		start  3 S .
+	update-rc.d -r ${D} sysfs.sh		start  2 S .
 	# udev runs at S 04 .
 	update-rc.d -r ${D} alignment.sh	start  7 S .
 	# busybox hwclock.sh (slugos-init) starts here (08)
