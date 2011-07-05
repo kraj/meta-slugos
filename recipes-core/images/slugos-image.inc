@@ -26,4 +26,4 @@ IMAGE_LINGUAS = ""
 # root file system), if this is not the case the following must not be done!
 IMAGE_PREPROCESS_COMMAND += "rm -f ${IMAGE_ROOTFS}/boot/?Image*;"
 
-inherit image
+inherit image nslu2-image
