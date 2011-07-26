@@ -56,7 +56,7 @@ TARGET_FPU = "soft"
 # so we get armv5teb etc into overrides, uclibc configs depend on it
 # to choose proper config
 
-MACHINEOVERRIDES .= ":${@bb.data.getVar('FEED_ARCH', d,1).replace('all','noarch')}"
+MACHINEOVERRIDES .= ":${@bb.data.getVar('TUNE_PKGARCH', d,1).replace('all','noarch')}"
 
 # glib-2.0 builds require USE_NLS to be overridden
 USE_NLS_glib-2.0 = "yes"
