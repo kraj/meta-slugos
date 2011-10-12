@@ -20,7 +20,7 @@ PREFERRED_VERSION_linux-ixp4xx = "2.6.37+svnr${SRCREV}"
 ### alphabetically.  Note that the main slugos.inc file
 ### may include preferred versions for toolchain components.
 
-PREFERRED_VERSION_busybox			?= "1.18.4"
+PREFERRED_VERSION_busybox			?= "1.18.5"
 PREFERRED_VERSION_dbus				?= "1.4.1"
 PREFERRED_VERSION_gvfs				?= "1.6.6"
 PREFERRED_VERSION_nslu2-linksys-firmware	?= "2.3r63"

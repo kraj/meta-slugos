@@ -1,3 +1,3 @@
 # this will prepend this layer to FILESPATH
-FILESEXTRAPATHS := "${THISDIR}/${PN}-${PV}"
+FILESEXTRAPATHS := "${THISDIR}/${PN}"
 #PRINC = "0"
