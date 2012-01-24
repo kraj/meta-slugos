@@ -2,12 +2,13 @@
 # than you get with the default terminal bell"
 DESCRIPTION = "A console utility to make a beep noise"
 SECTION = "console/utils"
-LICENSE = "GPL"
+LICENSE = "GPL-2.0"
 PR = "r3"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=0636e73ff0215e8d672dc4c32c317bb3"
-SRC_URI  = "http://johnath.com/beep/beep-${PV}.tar.gz"
-SRC_URI += "file://linux-input.patch"
+SRC_URI  = "http://johnath.com/beep/beep-${PV}.tar.gz \
+            file://linux-input.patch \
+           "
 
 S = "${WORKDIR}/beep-${PV}"
 
