@@ -1,6 +1,5 @@
 DESCRIPTION = "SlugOS initial network config via sysconf"
 SECTION = "base"
-PRIORITY = "required"
 LICENSE = "MIT"
 DEPENDS = "base-files devio"
 RDEPENDS_${PN} = "busybox devio"
