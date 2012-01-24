@@ -70,8 +70,6 @@ FULL_OPTIMIZATION = "-g -Os"
 # We need to keep OABI compat for things like madwifi-ng.
 ARM_KEEP_OABI = "1"
 
-TARGET_LINK_HASH_STYLE = "-Wl,--hash-style=gnu"
-
 CXXFLAGS += "-fvisibility-inlines-hidden"
 
 # There is a problem of sorts with Perl.  This needs a better home eventually,
