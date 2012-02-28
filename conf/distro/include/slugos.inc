@@ -39,8 +39,8 @@ DISTRO_FEATURES += ' ${@["", "thumb-interwork"][bb.data.getVar('THUMB_INTERWORK'
 
 DISTRO_FEATURES += "${DISTRO_FEATURES_LIBC}"
 
-IMAGE_BASENAME_libc-uclibc = ucslugc${SITEINFO_ENDIANNESS}
-IMAGE_BASENAME = slugos${SITEINFO_ENDIANNESS}
+IMAGE_BASENAME_libc-uclibc = "ucslugc${SITEINFO_ENDIANNESS}"
+IMAGE_BASENAME = "slugos${SITEINFO_ENDIANNESS}"
 
 # The following need not be set, the defaults should be adequate
 #USE_NLS = "no" or "yes"
@@ -123,10 +123,12 @@ https?$://.*/.* http://mirrors.openembedded.org/ \n \
 ftp://.*/.*     http://sources.openembedded.org/ \n \
 https?$://.*/.* http://sources.openembedded.org/ \n \
 "
-USER_CLASSES = "own-mirrors testlab"
+USER_CLASSES = "own-mirrors buildhistory"
 PACKAGE_CLASSES = "package_ipk"
 INHERIT_INSANE = "insane"
 INHERIT_DISTRO = "debian devshell sstate license"
+
+BUILDHISTORY_COMMIT = "1"
 
 #FIXME: HACK: REMOVE THIS
 IGNORE_STRIP_ERRORS = ""
