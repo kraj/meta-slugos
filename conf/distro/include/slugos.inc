@@ -118,8 +118,8 @@ DISTRO_EXTRA_RRECOMMENDS ?= ""
 SOURCE_MIRROR_URL ?= "http://sources.nslu2-linux.org/sources/"
 
 MIRRORS += " \
-ftp://.*/.*     http://mirrors.openembedded.org/ \n \
-https?$://.*/.* http://mirrors.openembedded.org/ \n \
+ftp://.*/.*     http://sources.openembedded.org/ \n \
+https?$://.*/.* http://sources.openembedded.org/ \n \
 ftp://.*/.*     http://sources.openembedded.org/ \n \
 https?$://.*/.* http://sources.openembedded.org/ \n \
 "
