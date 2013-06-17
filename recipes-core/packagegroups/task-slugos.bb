@@ -9,7 +9,7 @@ LICENSE = "MIT"
 PR = "r30"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 COMPATIBLE_MACHINE = "(nslu2|ixp4xx|sheevaplug|qemuarm)"
-ALLOW_EMPTY = "1"
+ALLOW_EMPTY_${PN} = "1"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 #----------------------------------------------------------------------------------
 # FIRMWARE CONFIGURATION
@@ -29,10 +29,10 @@ SLUGOS_MACHINE_RRECOMMENDS = ""
 # file system.
 SLUGOS_STANDARD_RRECOMMENDS += "\
 e2fsprogs-mke2fs \
-e2fsprogs-fsck \
+e2fsprogs \
 e2fsprogs-e2fsck \
 e2fsprogs-badblocks \
-e2fsprogs-blkid \
+util-linux-blkid \
 "
 
 # Filesystem selection.  Adding entries here adds the module to the
@@ -132,7 +132,7 @@ DISTRO_EXTRA_RDEPENDS ?= ""
 RDEPENDS_${PN} += "\
 	base-files base-passwd netbase \
         busybox initscripts slugos-init \
-        sysvinit update-modules \
+        sysvinit \
 	module-init-tools modutils-initscripts \
 	libgcc \
 	beep \

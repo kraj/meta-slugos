@@ -2,7 +2,7 @@ DESCRIPTION = "Task packages for the SlugOS Extended image"
 PR = "r2"
 LICENSE = "MIT"
 
-inherit task
+inherit packagegroup
 
 RNG_TOOLS_PACKAGE = "rng-tools"
 RNG_TOOLS_PACKAGE_libc-uclibc = ""

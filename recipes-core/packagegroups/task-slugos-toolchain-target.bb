@@ -1,6 +1,6 @@
 DESCRIPTION = "Packages for a standalone SDK or external toolchain"
 LICENSE = "MIT"
-ALLOW_EMPTY = "1"
+ALLOW_EMPTY_${PN} = "1"
 
 PR = "r3.2"
 
