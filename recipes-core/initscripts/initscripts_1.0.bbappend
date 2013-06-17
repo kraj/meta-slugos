@@ -23,7 +23,6 @@ CONFFILES_${PN} = ""
 SRC_URI += "file://alignment.sh \
 file://domainname.sh \
 file://bootclean.sh \
-file://finish.sh \
 file://checkroot \
 file://rmnologin \
 file://banner"
@@ -40,7 +39,6 @@ do_install_append() {
 	install -m 0755 ${WORKDIR}/bootclean.sh ${D}${sysconfdir}/init.d
 	install -m 0755 ${WORKDIR}/checkroot ${D}${sysconfdir}/init.d
 	install -m 0755 ${WORKDIR}/banner ${D}${sysconfdir}/init.d
-	install -m 0755 ${WORKDIR}/finish.sh ${D}${sysconfdir}/init.d
 	install -m 0755 ${WORKDIR}/rmnologin ${D}${sysconfdir}/init.d
 
 	# Remove the do install links (this detects a change to the
@@ -48,16 +46,18 @@ do_install_append() {
 	# This is a copy of the ln -sf lines from the initscripts
 	# do_install.
 	rm	${D}${sysconfdir}/rc6.d/S20sendsigs
-#	rm	${D}${sysconfdir}/rc6.d/S30urandom
+	rm	${D}${sysconfdir}/rc6.d/S30urandom
 	rm	${D}${sysconfdir}/rc6.d/S31umountnfs.sh
 	rm	${D}${sysconfdir}/rc6.d/S40umountfs
 	rm	${D}${sysconfdir}/rc6.d/S90reboot
 	rm	${D}${sysconfdir}/rc0.d/S20sendsigs
-#	rm	${D}${sysconfdir}/rc0.d/S30urandom
+	rm	${D}${sysconfdir}/rc0.d/S30urandom
 	rm	${D}${sysconfdir}/rc0.d/S31umountnfs.sh
 	rm	${D}${sysconfdir}/rc0.d/S40umountfs
 	rm	${D}${sysconfdir}/rc0.d/S90halt
 #	rm	${D}${sysconfdir}/rcS.d/S30checkfs.sh
+	rm	${D}${sysconfdir}/rcS.d/S29read-only-rootfs-hook.sh
+	rm	${D}${sysconfdir}/rcS.d/S30urandom
 	rm	${D}${sysconfdir}/rcS.d/S35mountall.sh
 	rm	${D}${sysconfdir}/rcS.d/S39hostname.sh
 	rm	${D}${sysconfdir}/rcS.d/S45mountnfs.sh
@@ -128,9 +128,6 @@ do_install_append() {
 
 	update-rc.d -r ${D} bootmisc.sh		start 55 S .
 	# urandom is currently disabled from S 55 (and won't work with tmpfs /var)
-
-	# ipkg-cl configure runs at S 98
-	update-rc.d -r ${D} finish.sh		start 99 S .
 
 	#
 	# User (2-5) links - UNCHANGED
