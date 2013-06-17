@@ -58,7 +58,7 @@ do_install () {
 	install -d ${D}${base_libdir}/udev/
 }
 
-pkg_postinst_append() {
+pkg_postinst_append_${PN}() {
 
        # Add the root partition to mount.blacklist to avoid a bug in the auto-mounter,
        # causing confusion with fsck on boot
